@@ -4,6 +4,9 @@
     "description": "A web rendering engine for high-performance 3D graphics.",
     "type": "module",
     "main": "build/index.js",
+    "files": [
+        "./build"
+    ],
     "scripts": {
         "setup": "npm install",
         "clean": "erase /F /S /Q build",
