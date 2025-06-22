@@ -5,8 +5,12 @@
     "type": "module",
     "main": "build/index.js",
     "scripts": {
+        "setup": "npm install",
+        "clean": "erase /F /S /Q build",
         "build": "npx rollup --config rollup.config.js",
-        "build:watch": "npx rollup --config rollup.config.js --watch"
+        "build:clean": "npm run clean && npm run build",
+        "build:watch": "npx rollup --config rollup.config.js --watch",
+        "push": "npm run build:clean && npm publish --access public"
     },
     "repository": {
         "type": "git",
@@ -19,7 +23,7 @@
         "Renderer"
     ],
     "author": "Jeremy Bankes",
-    "license": "UNLICENSED",
+    "license": "GPL-3.0-or-later",
     "bugs": {
         "url": "https://github.com/lucania-software/lumina/issues"
     },

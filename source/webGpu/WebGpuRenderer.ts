@@ -101,13 +101,7 @@ export class WebGpuRenderer extends Renderer {
         const uniformBindGroupEntry = this.uniformsBindGroups.get(pipeline);
         Data.assert(uniformBindGroupEntry !== undefined, `A bind group doesn't exist for the renderer's current pipeline.`);
         const { buffer, data, bindGroup: basicBindGroup } = uniformBindGroupEntry;
-        const left = -1;
-        const right = 1;
-        const bottom = 0;
-        const top = 1;
-        const near = -1;
-        const far = 100;
-        const projectionMatrix = Matrix4.orthographic(left, right, bottom, top, near, far);
+        const projectionMatrix = Matrix4.orthographic(0, this.context.canvas.width, 0, this.context.canvas.height, -1, 1);
         const viewMatrix = Matrix4.identity();
 
         data.set(model.transform.clone().transpose().data, 0);
@@ -149,7 +143,6 @@ export class WebGpuRenderer extends Renderer {
                     ]
                 });
                 this.instanceManagerBindGroups.set(instanceManager.buffer, bindGroup);
-                console.log(`Created bind group for instanced renderer! Going to render ${instanceManager.instances.length} instances!`);
             }
             this.encoders.renderPass.setBindGroup(BindGroupIndex.Instanced, bindGroup);
             this.renderModel(instanceManager.model, instanceManager.instances.length);
