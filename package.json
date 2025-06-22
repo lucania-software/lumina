@@ -1,0 +1,51 @@
+{
+    "name": "@lucania/lumina",
+    "version": "1.0.0",
+    "description": "A web rendering engine for high-performance 3D graphics.",
+    "type": "module",
+    "main": "build/index.js",
+    "scripts": {
+        "build": "npx rollup --config rollup.config.js",
+        "build:watch": "npx rollup --config rollup.config.js --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lucania-software/lumina.git"
+    },
+    "keywords": [
+        "WebGPU",
+        "Graphics",
+        "Rendering",
+        "Renderer"
+    ],
+    "author": "Jeremy Bankes",
+    "license": "UNLICENSED",
+    "bugs": {
+        "url": "https://github.com/lucania-software/lumina/issues"
+    },
+    "homepage": "https://github.com/lucania-software/lumina#readme",
+    "devDependencies": {
+        "@eslint/create-config": "1.9.x",
+        "@eslint/js": "9.29.x",
+        "@rollup/plugin-babel": "6.0.x",
+        "@rollup/plugin-commonjs": "28.0.x",
+        "@rollup/plugin-node-resolve": "16.0.x",
+        "@rollup/plugin-replace": "6.0.x",
+        "@rollup/plugin-typescript": "12.1.x",
+        "@stylistic/eslint-plugin": "4.4.x",
+        "@types/express": "5.0.x",
+        "@webgpu/types": "0.1.x",
+        "eslint": "9.29.x",
+        "globals": "16.2.x",
+        "nodemon": "3.1.x",
+        "rollup": "4.44.x",
+        "rollup-plugin-string": "3.0.x",
+        "tslib": "2.8.x",
+        "typescript": "5.8.x",
+        "typescript-eslint": "8.34.x"
+    },
+    "peerDependencies": {
+        "@lucania/toolbox": "1.4.x",
+        "@lucania/vectorics": "1.0.x"
+    }
+}
